@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.wrapper{
+    min-height: calc(100vh - 80px);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: calc(100vh - 110px);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__row{
+    display: flex;
+}
+.first__column{
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.second__column{
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media(max-width: 1200px){
+    .app__row{
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+    .first__column{
+        display: flex;
+
+    }
+
+    .second__column{
+        display: flex;
+
+    }
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media(max-width: 800px){
+    .app__row{
+        flex-direction: column;
+        text-align: center;
+
+
+    }
+    .first__column{
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+
+    }
+
+    .second__column{
+        display: flex;
+        flex-direction: column;
+
+    }
 }
