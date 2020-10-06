@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import './normalize.css'
+import AppHeader from './components/app-header'
+import AppFooter from "./components/app-footer";
+import AppSearchPanel from "./components/app-search-panel";
+import AppSortStatus from "./components/app-sort-status/app-sort-status";
+import AppSortPriority from "./components/app-sort-priority";
+import AppAddItemButton from "./components/app-addItem-button";
+import AppItemList from "./components/app-item-list";
+import AppPopupAddItemPanel from "./components/app-popup-addItem-panel";
+import AppPopupEditItemPanel from "./components/app-popup-editItem-panel";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="main">
+        <div className='wrapper'>
+          <header className='app__header'>
+            <AppHeader />
+          </header>
+            <section className="container  ">
+                <div className="app__row">
+                    <div className="first__column">
+                        <AppSearchPanel/>
+                        <AppSortStatus/>
+                    </div>
+                    <div className="second__column">
+                        <AppSortPriority/>
+                        <AppAddItemButton/>
+                    </div>
+                </div>
+               <AppItemList/>
+                <AppPopupAddItemPanel/>
+                <AppPopupEditItemPanel/>
+            </section>
+        </div>
+        <AppFooter/>
+      </div>
   );
 }
 
