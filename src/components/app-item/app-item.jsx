@@ -1,14 +1,13 @@
 import React from 'react'
 import './app-item.css'
-import {useDispatch, useSelector} from "react-redux";
-import {itemDone, removeItem} from "../../redux/actions/items";
+import {useDispatch} from "react-redux";
+import {editItemId, itemDone, removeItem} from "../../redux/actions/items";
+import {modalEditItemOpen} from "../../redux/actions/modal";
 
 const AppItem = (itemsProps) => {
     const [menuItemValue, setMenuItemValue] = React.useState("...");
     const dispatch = useDispatch();
     const {title, description, priority, id, done} = itemsProps.itemProps
-
-
 
     const itemMenu = (value) => {
         setMenuItemValue(value)
@@ -22,10 +21,18 @@ const AppItem = (itemsProps) => {
         dispatch(removeItem(i))
     }, [])
 
+    const setEditItemPopup = React.useCallback((i) => {
+
+        dispatch(modalEditItemOpen())
+        dispatch(editItemId(i))
+    }, [])
+
     const Menu = () => {
         switch (menuItemValue) {
             case "done":
                 return setItemDone(id) || reset();
+            case "edit":
+                return setEditItemPopup(id) || reset();
             case "delete":
                 return setItemRemove(id) || reset();
             default:
@@ -36,38 +43,6 @@ const AppItem = (itemsProps) => {
     const reset = () => {
         setMenuItemValue("...")
     }
-
-    /*state = {
-        menuItemValue: '...'
-    }
-
-    itemMenu = (e) => {
-        this.setState({
-            menuItemValue: e.target.value
-        })
-    }
-
-    Menu = () => {
-        switch (this.state.menuItemValue) {
-            case "done":
-                return this.props.onDoneToggle() || this.reset();
-            case "edit":
-                return this.props.onPoupapEditItemToggle(this.props.editPoupap) || this.props.editItem() || this.reset();
-            case "delete":
-                return this.props.removeItem() || this.reset();
-            default:
-                break;
-        };
-
-    }
-
-    reset = () =>{
-        this.setState({
-            menuItemValue: '...'
-        })
-    }*/
-
-
 
       let className = "item__box ";
       let selectClass = "item__menu ";

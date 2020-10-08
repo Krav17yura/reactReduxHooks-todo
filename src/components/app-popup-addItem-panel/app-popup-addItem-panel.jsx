@@ -12,7 +12,6 @@ const AppPopupAddItemPanel  = () =>  {
     const description = useSelector((state) => state.items.createItem.description)
     const priority = useSelector((state) => state.items.createItem.priority)
 
-
     const closeAddItemModal = React.useCallback(() => {
         dispatch(modalAddItemClose())
         dispatch(resetAddItemForm())
@@ -36,55 +35,14 @@ const AppPopupAddItemPanel  = () =>  {
         dispatch(changePriority(data))
     }, [])
 
-
-    /*state = {
-        label: "",
-        description: "",
-        priority: "Hight"
-    }
-
-
-    onLabelChange = (e) => {
-        this.setState({
-            label: e.target.value
-        });
-    };
-
-    onDescriptionChange = (e) => {
-        this.setState({
-            description: e.target.value
-        });
-    }
-
-    onPriorityChange = (e) => {
-        this.setState({
-            priority: e.target.value
-        })
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        this.props.addItem(this.state.label, this.state.description, this.state.priority);
-        this.setState({
-            label: "",
-            description: "",
-            priority: "Hight"
-        })
-
-    }*/
-
      let className = "app__poupap";
      if (!isOpen) {
          className += " none"
      }
 
-
-
-
      const onSubmit = (e) => {
         e.preventDefault();
     }
-
 
     return (
         <form action="#" className={className} onSubmit={onSubmit}>

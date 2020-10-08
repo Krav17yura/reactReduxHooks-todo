@@ -10,8 +10,23 @@ const modalAddItemClose = () => {
     }
 }
 
+const modalEditItemOpen = (id) => {
+    return{
+        type: 'MODAL_EDIT_ITEM_OPEN',
+        payload: id
+    }
+}
+
+const modalEditItemClose = () => {
+    return{
+        type: 'MODAL_EDIT_ITEM_CLOSE'
+    }
+}
+
 export {
     modalAddItemOpen,
-    modalAddItemClose
+    modalAddItemClose,
+    modalEditItemOpen,
+    modalEditItemClose
 
 }

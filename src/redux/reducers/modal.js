@@ -22,6 +22,28 @@ const modal = (state = initialState.modal, action) => {
                     }
             }
         }
+        case 'MODAL_EDIT_ITEM_OPEN':{
+
+            return{
+                ...state,
+                ...state.modal,
+                changeTask:{
+                    ...state.changeTask,
+                    show: true,
+
+                }
+            }
+        }
+        case 'MODAL_EDIT_ITEM_CLOSE':{
+            return{
+                ...state,
+                ...state.modal,
+                changeTask:{
+                    ...state.changeTask,
+                    show: false
+                }
+            }
+        }
         default:
             return state
     }

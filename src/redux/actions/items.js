@@ -3,14 +3,30 @@ const addItem = () => {
         type: 'ADD_ITEM'
     }
 }
-
 const itemDone = (id) => {
     return{
         type: 'ITEM_DONE',
         payload: id
     }
 }
+const itemEdit = () => {
+    return{
+        type: 'ITEM_EDIT',
+    }
+}
+const editItemId = (id) => {
+    return{
+        type: 'EDIT_ITEM_ID',
+        payload:id
 
+    }
+}
+const itemEditPanelData = (id) => {
+    return{
+        type: "ITEM_EDIT_PANEL_DATA",
+        payload: id
+    }
+}
 const removeItem = (id) => {
     return{
         type: 'REMOVE_ITEM',
@@ -19,9 +35,28 @@ const removeItem = (id) => {
     }
 }
 
+const sortPriority = (value) => {
+    return{
+        type: 'SORT_PRIORITY',
+        payload: value
+    }
+}
+const sortStatus = (value) => {
+    return{
+        type: 'SORT_STATUS',
+        payload: value
+    }
+}
+
+const searchItem = (value) => {
+    return{
+        type: "SEARCH_ITEM",
+        payload: value
+    }
+}
 const changeTitle = (title) => {
     return{
-        type: 'CHANGE_ITEM',
+        type: 'CHANGE_TITLE',
         payload: title
     }
 }
@@ -42,7 +77,24 @@ const changePriority = (priority) => {
         payload: priority
     }
 }
-
+const changeEditTitle = (title) => {
+    return{
+        type: 'CHANGE_EDIT_TITLE',
+        payload: title
+    }
+}
+const changeEditDescription = (description) => {
+    return{
+        type: 'CHANGE_EDIT_DESCRIPTION',
+        payload: description
+    }
+}
+const changeEditPriority = (priority) => {
+    return{
+        type: 'CHANGE_EDIT_PRIORITY',
+        payload: priority
+    }
+}
 
 export {
     addItem,
@@ -51,5 +103,14 @@ export {
     changePriority,
     resetAddItemForm,
     itemDone,
-    removeItem
+    removeItem,
+    itemEditPanelData,
+    changeEditTitle,
+    changeEditDescription,
+    changeEditPriority,
+    itemEdit,
+    editItemId,
+    sortPriority,
+    sortStatus,
+    searchItem
 }

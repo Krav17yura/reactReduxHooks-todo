@@ -16,21 +16,21 @@ const initialState = {
                     id:1,
                     title: "Create React App",
                     description: "Create app use react, html, js Create app use react, html, js Create app use react, html, js",
-                    priority: 'height',
+                    priority: 'Hight',
                     done:false
                 },
                 {
                     id:2,
                     title: "Drink coffee",
                     description: "Create app use react, html, js Create app use react, html, js Create app use react, html, js",
-                    priority: 'low',
+                    priority: 'Low',
                     done:false
                 },
                 {
                     id:3,
                     title: "Learn Js",
                     description: "Create app use react, html, js Create app use react, html, js Create app use react, html, js",
-                    priority: 'normal',
+                    priority: 'Normal',
                     done:false
                 },
             ]
@@ -40,10 +40,24 @@ const initialState = {
             description: '',
             priority: "high"
         },
+        editItem: {
+            title: "",
+            description: '',
+            priority: "high",
+            id: 1
+
+        },
         itemMenu:{
             value: ''
+        },
+        sort: {
+            search: '',
+            filterPriority: 'all',
+            filterStatus: 'all'
         }
-    }
+    },
+
+
 
  }
 
